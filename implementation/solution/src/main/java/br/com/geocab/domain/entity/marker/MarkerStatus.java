@@ -13,14 +13,14 @@ import org.directwebremoting.annotations.DataTransferObject;
  * 
  */
 @DataTransferObject(type="enum")
-public enum StatusMarker
+public enum MarkerStatus
 {
 	
 	/*-------------------------------------------------------------------
 	 *				 		     ENUMS
 	 *-------------------------------------------------------------------*/
 	//Do not change this order
-	ACCEPTED, REFUSED, PENDING;
+	PENDING, ACCEPTED, REFUSED;
 	
 	/**
 	 *
