@@ -78,6 +78,7 @@
 					</tr>
 				</table>
 			</form>
+			<!-- 
 			<table>
 				<tr>
 					<td class="line"><hr></hr></td>
@@ -108,7 +109,7 @@
 				<tr>
 					<td><a style="margin: 0 0 0 100px" class="dont-have-account" id="register" href="${pageContext.request.contextPath != '' ? pageContext.request.contextPath: '/'}"><spring:message code="authentication.Show-map" /></a><td>
 				</tr>
-			</table>
+			</table> -->
 		</div>
 	</div>
 	

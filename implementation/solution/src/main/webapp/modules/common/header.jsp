@@ -18,8 +18,8 @@
     <div class="nav-collapse collapse">
       <div class="left-side">
         <div style="float: left; margin-top: 23px">
-					<span style="font-size: 17px"><b style="font-size: 17px">GeoCAB</b>
-						- Cultivando Água Boa</span>
+					<span style="font-size: 17px">Bosque dos Trabalhadores e Visitantes
+						</span>
         </div>
       </div>
 

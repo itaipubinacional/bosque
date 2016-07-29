@@ -309,9 +309,10 @@ function MapController($scope, $injector, $log, $state, $timeout, $modal, $locat
    * The configuration view of the map
    */
   $scope.view = new ol.View({
-    center: ol.proj.transform([-54.1394, -24.7568], 'EPSG:4326', 'EPSG:3857'),
-    zoom: 9,
-    minZoom: 3
+    center: ol.proj.transform([-54.5878, -25.4165], 'EPSG:4326', 'EPSG:3857'),
+    zoom: 17,
+    minZoom: 3,
+    maxZoom: 20
   });
 
   // view events

@@ -133,15 +133,15 @@
 			<properties>
 				<!-- Database -->
                 <mvn.jdbc.jdbcUrl>jdbc:postgresql://chi656/desenvolvimento</mvn.jdbc.jdbcUrl>
-                <mvn.jdbc.username>geocab_pool</mvn.jdbc.username>
-                <mvn.jdbc.password>geocab_pool</mvn.jdbc.password>
+                <mvn.jdbc.username>bosque_pool</mvn.jdbc.username>
+                <mvn.jdbc.password>bosque_pool</mvn.jdbc.password>
 
 				<!-- Hibernate -->
 				<mvn.hibernate.hbm2ddl>validate</mvn.hibernate.hbm2ddl>
 				<mvn.hibernate.showSql>false</mvn.hibernate.showSql>
 				<mvn.hibernate.formatSql>false</mvn.hibernate.formatSql>
-				<mvn.hibernate.default_schema>geocab</mvn.hibernate.default_schema>
-				<mvn.hibernate.envers.default_schema>geocab_auditoria</mvn.hibernate.envers.default_schema>
+				<mvn.hibernate.default_schema>bosque</mvn.hibernate.default_schema>
+				<mvn.hibernate.envers.default_schema>bosque_auditoria</mvn.hibernate.envers.default_schema>
 				
 				<!-- Mail -->
 				<mvn.mail.host>host</mvn.mail.host>
