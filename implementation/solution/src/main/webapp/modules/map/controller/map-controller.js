@@ -996,12 +996,22 @@ function MapController($scope, $injector, $log, $state, $timeout, $modal, $locat
         $scope.setBackgroundMap(result.backgroundMap);
         $scope.coordinatesFormat = result.coordinates;
         $scope.$apply();
+        
+        google.maps.event.addListenerOnce( $scope.mapGoogle , 'tilesloaded', function() {
+          $timeout(function () {
+            $scope.map.updateSize();
+          }, 100)
+        });
+
       },
       errorHandler : function(message, exception) {
         $scope.message = {type:"error", text: message};
         $scope.$apply();
       }
     });
+
+
+
 
     /*markerService.getUserMe({
       callback: function (result) {
@@ -1012,6 +1022,7 @@ function MapController($scope, $injector, $log, $state, $timeout, $modal, $locat
         $scope.$apply();
       }
     });*/
+
 
   };
 
@@ -1215,7 +1226,7 @@ function MapController($scope, $injector, $log, $state, $timeout, $modal, $locat
             }
           }
           return item;
-        }
+        };
 
         $scope.allLayers = [];
 
@@ -1247,7 +1258,7 @@ function MapController($scope, $injector, $log, $state, $timeout, $modal, $locat
       }
     });
 
-  }
+  };
 
   /**
    * Formats the url with the name of the layer for each data source
@@ -1686,11 +1697,8 @@ function MapController($scope, $injector, $log, $state, $timeout, $modal, $locat
       $scope.view.setZoom($scope.view.getZoom());
 
       $timeout(function(){
-
         $scope.map.updateSize();
-
       }, 1000);
-
 
     }
 
@@ -1713,6 +1721,9 @@ function MapController($scope, $injector, $log, $state, $timeout, $modal, $locat
     setTimeout(function(){
       $('.gmnoprint:eq(4)').hide();
     }, 3000);
+
+
+
 
   };
 
@@ -4001,6 +4012,8 @@ function MapController($scope, $injector, $log, $state, $timeout, $modal, $locat
 
           $scope.internalLayers.push({"layer": layer, "id": layerId, "feature": iconFeature, "extent": source.getExtent()});
         });
+
+
 
         $scope.$apply();
 
