@@ -2549,7 +2549,8 @@ function MapController($scope, $injector, $log, $state, $timeout, $modal, $locat
       callback: function (result) {
 
         $scope.customSearchs = result;
-
+        $scope.currentCustomSearch = $scope.customSearchs[0];
+        
         $scope.toggleSidebarMenu(300, '#menu-item-2');
 
         $scope.$apply();
@@ -2563,6 +2564,7 @@ function MapController($scope, $injector, $log, $state, $timeout, $modal, $locat
         $scope.$apply();
       }
     });
+        
 
   }
 
@@ -2589,7 +2591,15 @@ function MapController($scope, $injector, $log, $state, $timeout, $modal, $locat
     });
   };
 
+  
+  $scope.listFieldsLayersClean = function() {
+	  var fields = $scope.currentCustomSearch.layerFields;
 
+      for (var field in fields) {   	  
+    	  $("#item_" + field).val("");    	  
+      }
+  }
+  
   /**
    *  List the layers of custom search fields
    */

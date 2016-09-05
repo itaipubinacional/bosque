@@ -32,13 +32,13 @@ uri="http://www.springframework.org/security/tags"%>
           <li ng-click="diminuirZoom()" title="<spring:message code="map.Zoom-out" />"><a>
           <div class="icon itaipu-icon-zoom-out sidebar-icon"></div>
         </a></li>
-          <li ng-click="initializeSelectionTool()"
+          <!-- <li ng-click="initializeSelectionTool()"
               ng-class="{ferramenta_active : menu.fcSelect}"
               title="<spring:message code='map.Select-posts'/>">
             <a>
               <div class="select-moderation sidebar-icon" style="width: 37px; height: 20px;"></div>
             </a>
-          </li>
+          </li> -->
           <li ng-if="hasPermissionCalculoDistancia"
               title="<spring:message code="map.Calculate-distance" />"
           ng-click="initializeDistanceCalc()"
@@ -964,9 +964,13 @@ uri="http://www.springframework.org/security/tags"%>
 
               <button class="btn btn-primary" ng-disabled="currentCustomSearch == null || currentCustomSearch.layer == null"
                       style="width: 90px; position: absolute;top: 190px;" ng-click="listFieldsLayersSearch()"><spring:message code="admin.custom-search.Search" /></button>
+              
+              <button class="btn" ng-disabled="currentCustomSearch == null || currentCustomSearch.layer == null"
+                      style="width: 90px; position: absolute;top: 190px; left:130px;" ng-click="listFieldsLayersClean()"><spring:message code="admin.custom-search.Clean" /></button>
+                            
               <br/>
               <div style="overflow-y: auto;position: absolute;top: 250px;bottom: 0px;left: 20px;right: 0px;">
-                <div ng-repeat="search in currentCustomSearch.layerFields" style="width: 90%;">
+                <div id="searchFields" ng-repeat="search in currentCustomSearch.layerFields" style="width: 90%;">
                   <input ng-if="search.type != 'BOOLEAN'" id="item_{{$index}}" placeholder="{{search.label ? search.label : search.name}}" ng-class="{datepicker: search.type == 'DATE' }" type="text" class="form-control" maxlength="40">
 
                   <div ng-if="search.type == 'BOOLEAN'"  >
@@ -978,32 +982,6 @@ uri="http://www.springframework.org/security/tags"%>
                            value="No"  /><spring:message code="map.No" />
 
                   </div>
-                  <!--                                     <div class="form-group" ng-if="search.type == 'DATETIME'"> -->
-                  <!--                                         <label>{{ search.label ? search.label : search.name }}</label> -->
-                  <!--                                         <div class="input-group input-daterange" id="item_{{$index}}" date-picker> -->
-                  <!--                                             <input type="text" class="form-control" name="start" /> -->
-                  <!--                                             <span class="input-group-addon">-</span> -->
-                  <!--                                             <input type="text" class="form-control" name="end" /> -->
-                  <!--                                         </div> -->
-                  <!--                                     </div> -->
-                  <!--                                     <input ng-if="search.type == 'STRING'" id="item_{{$index}}" placeholder="{{search.label ? search.label : search.name}}" type="text" class="form-control" maxlength="40"> -->
-                  <!--                                     <div class="form-group row" ng-if="search.type == 'NUMBER'" id="item_{{$index}}"> -->
-                  <!--                                         <div class="col-sm-5"> -->
-                  <!--                                             <select class="form-control" style="padding: 4px"> -->
-                  <!--                                                 <option value="=">=</option> -->
-                  <!--                                                 <option value=">">></option> -->
-                  <%--                                                 <option value="<"><</option> --%>
-                  <!--                                                 <option value=">=">>=</option> -->
-                  <%--                                                 <option value="<="><=</option> --%>
-                  <!--                                                 <option value="!=">!=</option> -->
-                  <!--                                                 <option value="entre">Entre</option> -->
-                  <!--                                                 <option value="somente">Somente</option> -->
-                  <!--                                             </select> -->
-                  <!--                                         </div> -->
-                  <!--                                         <div class="col-sm-7"> -->
-                  <!--                                             <input placeholder="{{search.label ? search.label : search.name}}" type="text" class="form-control" maxlength="40"> -->
-                  <!--                                         </div> -->
-                  <!--                                     </div> -->
                   </br>
                 </div>
               </div>
