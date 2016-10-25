@@ -76,9 +76,9 @@
 			</activation>
 			<properties>
 				<!-- Database -->
-                <mvn.jdbc.jdbcUrl>jdbc:postgresql://chi656:5432/desenvolvimento</mvn.jdbc.jdbcUrl>
-                <mvn.jdbc.username>bosque_pool</mvn.jdbc.username>
-                <mvn.jdbc.password>bosque_pool</mvn.jdbc.password>
+                <mvn.jdbc.jdbcUrl>jdbc:postgresql://localhost:5433/desenvolvimento</mvn.jdbc.jdbcUrl>
+                <mvn.jdbc.username>postgres</mvn.jdbc.username>
+                <mvn.jdbc.password>root</mvn.jdbc.password>
                 
                 <!-- Hibernate -->
 				<mvn.hibernate.hbm2ddl>validate</mvn.hibernate.hbm2ddl>
@@ -88,7 +88,7 @@
 				<mvn.hibernate.envers.default_schema>bosque_auditoria</mvn.hibernate.envers.default_schema>
 				
 				<!-- Mail -->
-				<mvn.mail.host>expressodev.prognus.com.br</mvn.mail.host>
+				<mvn.mail.host>chi05</mvn.mail.host>
 				<mvn.mail.port>25</mvn.mail.port>
 				<mvn.mail.username>no-reply</mvn.mail.username>
 				<mvn.mail.protocol>smtp</mvn.mail.protocol>
@@ -97,7 +97,7 @@
 				<mvn.mail.tls>false</mvn.mail.tls>
 				<mvn.mail.ssl>false</mvn.mail.ssl>
 				<mvn.mail.debug>true</mvn.mail.debug>
-				<mvn.mail.support>no-reply-prognus@mailinator.com</mvn.mail.support>
+				<mvn.mail.support>tbecker@itaipu.gov.br</mvn.mail.support>
 				
 				<!-- ModeShape -->
 				<mvn.jcr.indexes>/tmp/geocab/indexes</mvn.jcr.indexes>

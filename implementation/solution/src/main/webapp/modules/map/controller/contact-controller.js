@@ -65,6 +65,10 @@ function ContactController($scope, $injector, $log, $state, $timeout, $modal,
 	 */
 	$scope.sendForm = function() {
 
+		$scope.contactForm.attachment = dwr.util.getValue('attachment');
+		if ($scope.contactForm.attachment != undefined)
+		    $scope.contactForm.attachmentName = $scope.contactForm.attachment.files[0].name;
+
 		if (!$scope.form.$valid) {
 			$scope.msg = {
 				type : "danger",
@@ -74,11 +78,22 @@ function ContactController($scope, $injector, $log, $state, $timeout, $modal,
 			$scope.fadeMsg();
 		} else {
 
+            if ($scope.contactForm.attachment.files[0].size >= 10000000) {
+            		    $scope.msg = {
+            		        type : "danger",
+            		        text : $translate('contact.FileSizeErrorMessage'),
+            		        dismiss : true
+            		    };
+            		    $scope.fadeMsg();
+            		    $scope.$apply();
+            		    return;
+            }
+
 			contactService.contactUs($scope.contactForm, {
 				callback : function(result) {
 					$scope.msg = {
 						type : "success",
-						text : 'Sua mensagem foi enviada com sucesso!',
+						text : $translate('contact.MessageSuccess'),
 						dismiss : true
 					};
 					$scope.fadeMsg();
@@ -96,12 +111,11 @@ function ContactController($scope, $injector, $log, $state, $timeout, $modal,
 			});
 
 		}
-
 	};
 
 	$scope.fadeMsg = function(){
 		$("div.msg").show();
 	}
-
-
+	
+	
 };

@@ -42,12 +42,16 @@
 <script type="text/javascript" src="<c:url value="/static/libs/angular-nav-tree/abn_tree_directive.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/static/libs/angular-rangeslider/js/scaleSlider-directive.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/static/libs/eits-directives/upload-file/upload-file.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/static/libs/upload-file/upload-file.js"/>"></script>
 
 <!-- Bootstrap -->
 <script type="text/javascript" src="<c:url value="/webjars/bootstrap/3.2.0/js/bootstrap.min.js"/>"></script>
 
 <!-- ui tree -->
 <script type="text/javascript" src="<c:url value="/static/libs/angular-ui-tree/js/angular-ui-tree.min.js"/>"></script>
+
+<!-- Filestyle -->
+<script type="text/javascript" src="<c:url value="/static/libs/bootstrap-filestyle/bootstrap-filestyle.min.js"/>"></script>
 
 <!-- DWR -->
 <script type="text/javascript" src="<c:url value="/broker/engine.js"/>"></script>

@@ -3,14 +3,18 @@
  */
 package br.com.geocab.domain.service;
 
+import java.awt.image.BufferedImage;
+import java.io.InputStream;
 import java.util.logging.Logger;
 
 import javax.servlet.http.HttpSession;
 
 import org.directwebremoting.WebContextFactory;
 import org.directwebremoting.annotations.RemoteProxy;
+import org.directwebremoting.io.FileTransfer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
+import org.springframework.core.io.InputStreamResource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
@@ -19,6 +23,7 @@ import br.com.geocab.domain.entity.configuration.account.Email;
 import br.com.geocab.domain.entity.configuration.account.User;
 import br.com.geocab.domain.repository.IContactMailRepository;
 import nl.captcha.Captcha;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @author emanuelvictor
@@ -67,7 +72,7 @@ public class ContactService
 				email.validate(getCaptcha());
 			}
 			email.validate();
-	
+
 			contactMailRepository.sendContactUs(email);
 		}
 		catch (Exception e)

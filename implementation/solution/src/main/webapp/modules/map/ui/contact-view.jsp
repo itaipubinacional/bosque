@@ -90,6 +90,20 @@
                           code="admin.users.required"/>
                   </span>
       </div>
+      
+      <div>
+      <div class="form-item position-relative" style="width: 300px;">
+        <label class="detail-label" required><spring:message code="contact.Attachment"/></label>
+        <input type="file" upload-file-simple="contactForm.attachment" id="attachment">
+        <!-- <input name="attachment" type="file" class="form-control"
+               ng-model="contactForm.attachment"               
+               autofocus
+               autocomplete="off"
+               ng-hover> -->
+                   <!-- <span ng-show="form.subject.$error.required && (form.$submitted || form.subject.$dirty)"
+                         class="tooltip-validation"><spring:message code="contact.Subject"/> <spring:message
+                       code="admin.users.required"/></span> -->
+      </div>
 
     <div>
       

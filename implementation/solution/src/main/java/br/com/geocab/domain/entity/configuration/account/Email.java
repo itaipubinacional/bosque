@@ -3,12 +3,15 @@
  */
 package br.com.geocab.domain.entity.configuration.account;
 
+import java.io.InputStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.mail.internet.InternetAddress;
 
 import org.directwebremoting.annotations.DataTransferObject;
+import org.directwebremoting.io.FileTransfer;
+import org.springframework.core.io.InputStreamSource;
 import org.springframework.util.Assert;
 
 import nl.captcha.Captcha;
@@ -44,6 +47,10 @@ public class Email
 	 * 
 	 */
 	private String answer;
+	
+	byte[] attachment;
+
+	String attachmentName;
 
 	/*-------------------------------------------------------------------
 	 * 		 					CONSTRUCTORS
@@ -63,7 +70,7 @@ public class Email
 	 * @param message
 	 * @param answer
 	 */
-	public Email(String name, String email, String subject, String message, String answer)
+	public Email(String name, String email, String subject, String message, String answer, byte[] attachment)
 	{
 		super();
 		this.name = name;
@@ -71,6 +78,7 @@ public class Email
 		this.subject = subject;
 		this.message = message;
 		this.answer = answer;
+		this.attachment = attachment;
 	}
 
 	/*-------------------------------------------------------------------
@@ -217,5 +225,34 @@ public class Email
 	{
 		this.answer = answer;
 	}
+
+	/**
+	 * @return the attachment
+	 */
+	public byte[] getAttachment()
+	{
+		return attachment;
+	}
+
+	/**
+	 * @param attachment the attachment to set
+	 */
+	public void setAttachment(byte[] attachment)
+	{
+		this.attachment = attachment;
+	}
+
+	/**
+	 * @return the attachment Name
+	 */
+	public String getAttachmentName()
+	{
+		return attachmentName;
+	}
+
+
+	public void setAttachmentName(String attachmentName) 	{ this.attachmentName = attachmentName; }
+
+
 
 }
